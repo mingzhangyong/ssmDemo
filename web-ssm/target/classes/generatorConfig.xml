@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- 配置Run As Maven build : Goals 参数 : mybatis-generator:generate -Dmybatis.generator.overwrite=true -->
+<!-- 配置 tableName,使用 Run As Maven build 生成 dao model 层 -->
+<generatorConfiguration>
+	<!-- 配置文件路径 -->
+	<properties url="${mybatis.generator.generatorConfig.properties}" />
+	 <!--<properties resource="generatorConfig.properties"/>-->
+
+	<!--数据库驱动包路径 -->
+	<classPathEntry location="${drive.class.path}" />
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<!--关闭注释 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!--数据库连接信息 -->
+		<jdbcConnection
+				driverClass="${jdbc.driver}"
+				connectionURL="${jdbc.url}"
+				userId="${jdbc.username}"
+				password="${jdbc.password}">
+		</jdbcConnection>
+
+		<!--生成的model 包路径 -->
+		<javaModelGenerator targetPackage="${model.package}"
+			targetProject="${target.project}">
+			<property name="enableSubPackages" value="ture" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!--生成xml mapper文件 路径 -->
+		<sqlMapGenerator targetPackage="${xml.mapper.package}"
+			targetProject="${target.project}">
+			<property name="enableSubPackages" value="ture" />
+		</sqlMapGenerator>
+
+		<!-- 生成的Dao接口 的包路径 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="${dao.package}" targetProject="${target.project}">
+			<property name="enableSubPackages" value="ture" />
+		</javaClientGenerator>
+
+		<!--对应数据库表名 -->
+		<!-- <table tableName="task_whitelist" domainObjectName="TaskWhitelist"
+			> <columnOverride column="effTime" javaType="String"></columnOverride> <columnOverride
+			column="expTime" javaType="String"></columnOverride> </table> -->
+		<!-- <table tableName="rt_third_compare" domainObjectName="RtThirdCompare"
+			> <property name="useActualColumnNames" value="true"/> <columnOverride column="compareTime"
+			javaType="String"></columnOverride> </table> -->
+		<!-- <table tableName="rt_upload_stop_info" domainObjectName="UploadStopInfo"
+			> <columnOverride column="recordTime" javaType="String"></columnOverride>
+			</table> -->
+		<!-- <table tableName="vp_publish_record" domainObjectName="PublishRecord"
+			> <columnOverride column="createTime" javaType="String"></columnOverride>
+			<columnOverride column="backTime" javaType="String"></columnOverride> <columnOverride
+			column="updatedTime" javaType="String"></columnOverride> <columnOverride
+			column="switchedTime" javaType="String"></columnOverride> </table> -->
+		<!-- <table tableName="op_task" domainObjectName="OpTask" > <columnOverride
+			column="createTime" javaType="String"></columnOverride> <columnOverride column="lqTime"
+			javaType="String"></columnOverride> <columnOverride column="finishTime" javaType="String"></columnOverride>
+			<columnOverride column="lastModifyTime" javaType="String"></columnOverride>
+			<columnOverride column="beginDate" javaType="String"></columnOverride> <columnOverride
+			column="endDate" javaType="String"></columnOverride> </table> -->
+		<!--<table tableName="task_op_record" domainObjectName="TaskOpRecord" >
+			<columnOverride column="opTime" javaType="String"></columnOverride> </table>
+			<table tableName="rt_stop_task_pool" domainObjectName="StopTaskPool" > <columnOverride
+			column="create_time" javaType="String"></columnOverride> <columnOverride
+			column="update_time" javaType="String"></columnOverride> <columnOverride
+			column="push_time" javaType="String"></columnOverride> </table> <table tableName="bus_schedule_task"
+			domainObjectName="RtBusScheduleTask" > </table> <table tableName="rt_stop_audit_record"
+			domainObjectName="RtStopAuditRecord" > <columnOverride column="audit_time"
+			javaType="String"></columnOverride> <columnOverride column="test_pic_time"
+			javaType="String"></columnOverride> <columnOverride column="test_client_time"
+			javaType="String"></columnOverride> </table> -->
+		<!-- <table tableName="bus_sos_linemap" domainObjectName="BusSosLinemap"
+			> <property name="useActualColumnNames" value="true"/> </table> -->
+		<!-- <table tableName="bh_sos_line" domainObjectName="BhSosLine" > <property
+			name="useActualColumnNames" value="true"/> </table> <table tableName="bh_sos_linemap"
+			domainObjectName="BhSosLinemap" > <property name="useActualColumnNames" value="true"/>
+			</table> -->
+		<!-- <table tableName="rt_test_record_simple"> <columnOverride column="recordtime"
+			javaType="String"></columnOverride> <columnOverride column="dealtime" javaType="String"></columnOverride>
+			<columnOverride column="day" javaType="String"></columnOverride> <columnOverride
+			column="snaprecvtime" javaType="String"></columnOverride> </table> -->
+		<!-- <table tableName="algo_tra_statistics" domainObjectName="AlgoTraStatistics"
+			> </table> -->
+		<!-- <table tableName="algo_tra_station_statistics" domainObjectName="AlgoTraStationStatistics">
+			</table> -->
+		<!-- <table tableName="algo_station_statistics" domainObjectName="AlgoStationStatistics">
+			</table> -->
+		<!-- <table tableName="bus_schedule_data" domainObjectName="RtBusScheduleData"
+			> <columnOverride column="picTime" javaType="String"></columnOverride> <columnOverride
+			column="clientTimse" javaType="String"></columnOverride> </table> -->
+		<!-- <table tableName="subway_terminal_station" domainObjectName="SubwaysTerminalStation"></table> -->
+		<!-- <table tableName="line" domainObjectName="Line"></table>
+		<table tableName="line_checkpoint" domainObjectName="LineCheckPoint"></table>
+		<table tableName="line_stop" domainObjectName="LineStop"></table>
+		<table tableName="station" domainObjectName="Station"></table> -->
+		<table tableName="t_user" domainObjectName="DBUser"></table>
+
+
+
+	</context>
+</generatorConfiguration>
